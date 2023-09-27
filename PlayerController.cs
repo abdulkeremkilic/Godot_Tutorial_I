@@ -24,7 +24,7 @@ public partial class PlayerController : CharacterBody2D
     {
         jumpTimer += delta;
         Vector2 velocity = Velocity;
-        GD.Print(jumpTimer);
+        //GD.Print(jumpTimer);
 
 
         //apply gravity only if in the air
@@ -33,6 +33,8 @@ public partial class PlayerController : CharacterBody2D
 
         //This code below makes the character go back to the floor instantly. Can be used for some combos.
         if (Input.IsKeyPressed(Key.Down) && !IsOnFloor())
+        //This way it count even if you're holding the key. So this is not the proper way.
+        //TODO: Make this code to read the key for once.
         {
             velocity.Y = jumpVelocity * 5;
         }

@@ -1,3 +1,7 @@
+Timer
+Label
+Panel
+RichTextLabel
 CollisionShape2D
 StaticBody2D
 Camera2D
