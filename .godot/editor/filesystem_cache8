@@ -1,6 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695843848
+::res://::1696081906
 5.png::CompressedTexture2D::5724416218000933496::1695507421::1695507421::1::::<><>::
 icon.svg::CompressedTexture2D::3561769354851516885::1695331821::1695331825::1::::<><>::
-node_2d.tscn::PackedScene::4504633161895528826::1695843787::0::1::::<><>::res://PlayerController.cs<>res://5.png<>res://icon.svg
-PlayerController.cs::CSharpScript::-1::1695843644::0::1::::<><>::
+LableController.cs::CSharpScript::-1::1695935794::0::1::::<><>::
+LableTimer.cs::CSharpScript::-1::1695928010::0::1::::<><>::
+node_2d.tscn::PackedScene::4504633161895528826::1695933907::0::1::::<><>::res://PlayerController.cs<>uid://cns7kfmtqpjo7::::res://5.png<>uid://bq0l257nngwgr::::res://icon.svg<>res://LableController.cs
+PlayerController.cs::CSharpScript::-1::1695931204::0::1::::<><>::

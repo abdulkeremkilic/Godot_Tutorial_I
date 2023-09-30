@@ -1,3 +1,5 @@
 res://node_2d.tscn
-res://PlayerController.cs
 res://LableController.cs
+res://LableTimer.cs
+res://PlayerController.cs
+res://Main.cs

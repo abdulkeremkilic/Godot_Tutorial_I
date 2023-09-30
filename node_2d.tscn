@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5gcwdphtcuf7"]
+[gd_scene load_steps=8 format=3 uid="uid://b5gcwdphtcuf7"]
 
 [ext_resource type="Script" path="res://PlayerController.cs" id="1_dg4rf"]
+[ext_resource type="Script" path="res://Main.cs" id="1_f5kk4"]
 [ext_resource type="Texture2D" uid="uid://cns7kfmtqpjo7" path="res://5.png" id="1_rmc4k"]
 [ext_resource type="Texture2D" uid="uid://bq0l257nngwgr" path="res://icon.svg" id="2_3yv4n"]
 [ext_resource type="Script" path="res://LableController.cs" id="4_bjdqk"]
@@ -11,8 +12,9 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33m36"]
 size = Vector2(1016, 128)
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 position = Vector2(472, 0)
+script = ExtResource("1_f5kk4")
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(96, 80)
@@ -43,3 +45,13 @@ offset_bottom = 237.0
 theme_type_variation = &"HeaderMedium"
 text = "What the hell bro! Shut your fingers!"
 script = ExtResource("4_bjdqk")
+
+[node name="KeyPressedTimer" type="Timer" parent="Label1"]
+autostart = true
+
+[node name="ClearLableTimer" type="Timer" parent="Label1"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Label1/KeyPressedTimer" to="Label1" method="onTimerTimeout"]
+[connection signal="timeout" from="Label1/ClearLableTimer" to="Label1" method="onTimerTimeoutLableCleaner"]
