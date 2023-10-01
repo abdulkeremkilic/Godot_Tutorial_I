@@ -1,8 +1,37 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696081906
+::res://::1696171754
 5.png::CompressedTexture2D::5724416218000933496::1695507421::1695507421::1::::<><>::
 icon.svg::CompressedTexture2D::3561769354851516885::1695331821::1695331825::1::::<><>::
-LableController.cs::CSharpScript::-1::1695935794::0::1::::<><>::
-LableTimer.cs::CSharpScript::-1::1695928010::0::1::::<><>::
-node_2d.tscn::PackedScene::4504633161895528826::1695933907::0::1::::<><>::res://PlayerController.cs<>uid://cns7kfmtqpjo7::::res://5.png<>uid://bq0l257nngwgr::::res://icon.svg<>res://LableController.cs
-PlayerController.cs::CSharpScript::-1::1695931204::0::1::::<><>::
+node_2d.tscn::PackedScene::4088542598277986667::1696171755::0::1::::<><>::res://Scripts/Main.cs<>uid://cns7kfmtqpjo7::::res://5.png<>res://Scripts/PlayerController.cs<>uid://p32q3y8tsb7m::::res://Animations/idle_animations/Idle (1).png<>uid://doi8a5socw2c0::::res://Animations/idle_animations/Idle (2).png<>uid://ck46ymjx42xs2::::res://Animations/idle_animations/Idle (3).png<>uid://f3y0lp1aigdo::::res://Animations/idle_animations/Idle (4).png<>uid://b413hb81rsp6j::::res://Animations/idle_animations/Idle (5).png<>uid://d4kyo23le628m::::res://Animations/idle_animations/Idle (6).png<>uid://tlkr6f4pf0sn::::res://Animations/idle_animations/Idle (7).png<>uid://27bisouqodt::::res://Animations/idle_animations/Idle (8).png<>uid://chr8or6hcax55::::res://Animations/idle_animations/Idle (9).png<>uid://l7wa21qpscet::::res://Animations/idle_animations/Idle (10).png<>uid://bs7p0y0s03sr::::res://Animations/idle_animations/Idle (11).png<>uid://c7pulc1vkbjpr::::res://Animations/idle_animations/Idle (12).png<>uid://c0fs5ryvwkgu6::::res://Animations/idle_animations/Idle (13).png<>uid://dmqabfcaslkrf::::res://Animations/idle_animations/Idle (14).png<>uid://jvc2ybm6t3mj::::res://Animations/idle_animations/Idle (15).png<>uid://cguc5r51sxtni::::res://Animations/walking_animations/Walk (1).png<>uid://c4661d5gvki0u::::res://Animations/walking_animations/Walk (2).png<>uid://d1hcc6vmdq3eo::::res://Animations/walking_animations/Walk (3).png<>uid://sprmvbo83pal::::res://Animations/walking_animations/Walk (4).png<>uid://dmjj7ibrlnta3::::res://Animations/walking_animations/Walk (5).png<>uid://cacj74gybblrk::::res://Animations/walking_animations/Walk (6).png<>uid://da7bxdy0obw8e::::res://Animations/walking_animations/Walk (7).png<>uid://dfpbbfkvgb8ag::::res://Animations/walking_animations/Walk (8).png<>uid://b4p0j2ogvghxb::::res://Animations/walking_animations/Walk (9).png<>uid://k2665kacidwi::::res://Animations/walking_animations/Walk (10).png<>res://Animations/LableController.cs
+::res://Animations/::1696171754
+LableController.cs::CSharpScript::-1::1696087776::0::1::::<><>::
+::res://Animations/idle_animations/::1696156531
+Idle (1).png::CompressedTexture2D::1112304672445911472::1696155717::1696156531::1::::<><>::
+Idle (2).png::CompressedTexture2D::8160426148952176473::1696155717::1696156531::1::::<><>::
+Idle (3).png::CompressedTexture2D::5536522489732035747::1696155717::1696156531::1::::<><>::
+Idle (4).png::CompressedTexture2D::410249250088413516::1696155717::1696156531::1::::<><>::
+Idle (5).png::CompressedTexture2D::4477283651863050115::1696155717::1696156531::1::::<><>::
+Idle (6).png::CompressedTexture2D::9216865964955267058::1696155717::1696156531::1::::<><>::
+Idle (7).png::CompressedTexture2D::1356935350127095629::1696155717::1696156531::1::::<><>::
+Idle (8).png::CompressedTexture2D::57683377578794161::1696155717::1696156531::1::::<><>::
+Idle (9).png::CompressedTexture2D::5301287297654044470::1696155717::1696156531::1::::<><>::
+Idle (10).png::CompressedTexture2D::839474601032221731::1696155717::1696156531::1::::<><>::
+Idle (11).png::CompressedTexture2D::109318725208223469::1696155717::1696156531::1::::<><>::
+Idle (12).png::CompressedTexture2D::7051084159881590779::1696155717::1696156531::1::::<><>::
+Idle (13).png::CompressedTexture2D::6539031757750456239::1696155717::1696156531::1::::<><>::
+Idle (14).png::CompressedTexture2D::8034560270325411175::1696155717::1696156531::1::::<><>::
+Idle (15).png::CompressedTexture2D::675222438691150809::1696155717::1696156531::1::::<><>::
+::res://Animations/walking_animations/::1696157872
+Walk (1).png::CompressedTexture2D::5235437932545658150::1696157868::1696157872::1::::<><>::
+Walk (2).png::CompressedTexture2D::6874242404897543654::1696157868::1696157872::1::::<><>::
+Walk (3).png::CompressedTexture2D::8998749296734548982::1696157868::1696157872::1::::<><>::
+Walk (4).png::CompressedTexture2D::1295419575415838519::1696157868::1696157872::1::::<><>::
+Walk (5).png::CompressedTexture2D::8020711595381325024::1696157868::1696157872::1::::<><>::
+Walk (6).png::CompressedTexture2D::4777575254771996304::1696157868::1696157872::1::::<><>::
+Walk (7).png::CompressedTexture2D::7225424125261811654::1696157868::1696157872::1::::<><>::
+Walk (8).png::CompressedTexture2D::7541234717394067346::1696157868::1696157872::1::::<><>::
+Walk (9).png::CompressedTexture2D::4454398252529878507::1696157868::1696157872::1::::<><>::
+Walk (10).png::CompressedTexture2D::759565813278289760::1696157868::1696157872::1::::<><>::
+::res://Scripts/::1696171754
+Main.cs::CSharpScript::-1::1696086225::0::1::::<><>::
+PlayerController.cs::CSharpScript::-1::1696160116::0::1::::<><>::

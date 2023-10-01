@@ -18,14 +18,13 @@ public partial class LableController : Label
 
 		if (Input.IsKeyPressed(Key.Up))
 		{
-			GD.Print(upKeyPressed);
 			upKeyPressed += 1;
 		}
 
 
 		if (upKeyPressed >= 15 && this.onTimerTimeout())
 		{
-			GD.Print("UpKey pressed more than 15 times -> toogleVisibility(): true");
+			//GD.Print("UpKey pressed more than 15 times -> toogleVisibility(): true");
 			this.toogleVisibility();
 		}
 
@@ -47,7 +46,7 @@ public partial class LableController : Label
 		if (this.Visible == true)
 		{
 			this.toogleVisibility();
-			GD.Print("0.5 second is off: cleaning the screen");
+			//GD.Print("0.5 second is off: cleaning the screen");
 		}
 	}
 
