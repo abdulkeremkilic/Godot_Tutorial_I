@@ -1,3 +1,4 @@
+CollisionShape2D
 AnimationTree
 AnimatedSprite2D
 AnimationPlayer
@@ -5,7 +6,6 @@ Timer
 Label
 Panel
 RichTextLabel
-CollisionShape2D
 StaticBody2D
 Camera2D
 CharacterBody2D

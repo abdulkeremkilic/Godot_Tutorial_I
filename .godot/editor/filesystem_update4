@@ -1,7 +1,4 @@
 res://node_2d.tscn
-res://LableController.cs
-res://Main.cs
-res://PlayerController.cs
 res://Scripts/LableController.cs
 res://Scripts/Main.cs
 res://Scripts/PlayerController.cs

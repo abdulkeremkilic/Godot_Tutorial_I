@@ -44,7 +44,13 @@ public partial class PlayerController : CharacterBody2D
         //TODO: Make this code to read the key for once.
         {
             velocity.Y = jumpVelocity * 5;
+            sprite.Play("crouch");
+        } 
+        else if (Input.IsKeyPressed(Key.Down) && IsOnFloor()) 
+        {
+            sprite.Play("crouch");
         }
+        //TODO: if there is velocity; make character slide for a while.
 
         if (Input.IsKeyPressed(Key.Up) && IsOnFloor())
         {
