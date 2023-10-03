@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://byirx1llcjqxv"]
+[gd_scene load_steps=40 format=3 uid="uid://byirx1llcjqxv"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_pjq25"]
 [ext_resource type="Texture2D" uid="uid://cns7kfmtqpjo7" path="res://5.png" id="1_rmc4k"]
@@ -15,7 +15,15 @@
 [ext_resource type="Texture2D" uid="uid://c7vxjdk78aprr" path="res://Animations/Individual Sprite/Crouch/Warrior_Crouch_5.png" id="7_u6ly6"]
 [ext_resource type="Texture2D" uid="uid://colbyegx45k0w" path="res://Animations/Individual Sprite/Crouch/Warrior_Crouch_6.png" id="8_minxn"]
 [ext_resource type="Texture2D" uid="uid://dyg3qfgsx0vhv" path="res://Animations/Individual Sprite/idle/Warrior_Idle_6.png" id="8_thddy"]
+[ext_resource type="Texture2D" uid="uid://c605yt0vjgrcr" path="res://Animations/Individual Sprite/Fall/Warrior_Fall_1.png" id="9_57to4"]
+[ext_resource type="Texture2D" uid="uid://thcudxhggha5" path="res://Animations/Individual Sprite/Fall/Warrior_Fall_2.png" id="10_u1sl6"]
+[ext_resource type="Texture2D" uid="uid://dsx6ndfvbm0ce" path="res://Animations/Individual Sprite/Fall/Warrior_Fall_3.png" id="11_a0hi6"]
+[ext_resource type="Texture2D" uid="uid://cuqj4asdwlpei" path="res://Animations/Individual Sprite/Slide/Warrior-Slide_1.png" id="15_ysa7y"]
+[ext_resource type="Texture2D" uid="uid://ck68xwb6do1oy" path="res://Animations/Individual Sprite/Slide/Warrior-Slide_2.png" id="16_drl3s"]
+[ext_resource type="Texture2D" uid="uid://bkqwhdksljg6m" path="res://Animations/Individual Sprite/Slide/Warrior-Slide_3.png" id="17_qcm82"]
 [ext_resource type="Texture2D" uid="uid://5yecs4jqjece" path="res://Animations/Individual Sprite/Run/Warrior_Run_1.png" id="18_66j7k"]
+[ext_resource type="Texture2D" uid="uid://h6107essldw" path="res://Animations/Individual Sprite/Slide/Warrior-Slide_4.png" id="18_mwupp"]
+[ext_resource type="Texture2D" uid="uid://dj8rr5rj5kspd" path="res://Animations/Individual Sprite/Slide/Warrior-Slide_5.png" id="19_afakd"]
 [ext_resource type="Texture2D" uid="uid://pwo4ceivqjof" path="res://Animations/Individual Sprite/Run/Warrior_Run_2.png" id="19_sk5y0"]
 [ext_resource type="Texture2D" uid="uid://bchdsc53jy114" path="res://Animations/Individual Sprite/Run/Warrior_Run_3.png" id="20_wrbf7"]
 [ext_resource type="Texture2D" uid="uid://bpmycuquftbcv" path="res://Animations/Individual Sprite/Run/Warrior_Run_4.png" id="21_fd2wg"]
@@ -24,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://cx7k18e4icmuv" path="res://Animations/Individual Sprite/Run/Warrior_Run_7.png" id="24_kbcmm"]
 [ext_resource type="Texture2D" uid="uid://cxgth7tvwdbpw" path="res://Animations/Individual Sprite/Run/Warrior_Run_8.png" id="25_egerc"]
 [ext_resource type="Script" path="res://Scripts/LableController.cs" id="29_bdplj"]
+[ext_resource type="Texture2D" uid="uid://c0k4ik0dxxwy7" path="res://Animations/Individual Sprite/WallSlide/Warrior_WallSlide_1.png" id="31_mkr3o"]
+[ext_resource type="Texture2D" uid="uid://dluk80tr1e6kg" path="res://Animations/Individual Sprite/WallSlide/Warrior_WallSlide_2.png" id="32_htl6o"]
+[ext_resource type="Texture2D" uid="uid://dlfb6ceukqkx5" path="res://Animations/Individual Sprite/WallSlide/Warrior_WallSlide_3.png" id="33_8t0mn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aqqyp"]
 animations = [{
@@ -48,7 +59,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"crouch",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_57to4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u1sl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_a0hi6")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,6 +96,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ysa7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_drl3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qcm82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mwupp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_afakd")
+}],
+"loop": true,
+"name": &"slide",
 "speed": 8.0
 }, {
 "frames": [{
@@ -100,15 +145,32 @@ animations = [{
 }],
 "loop": true,
 "name": &"walking",
-"speed": 8.0
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_mkr3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_htl6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8t0mn")
+}],
+"loop": true,
+"name": &"wall_slide",
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4epu"]
-radius = 13.4737
-height = 40.357
+radius = 6.73685
+height = 30.2677
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33m36"]
 size = Vector2(1016, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48ote"]
+size = Vector2(127.471, 126.554)
 
 [node name="Main" type="Node2D"]
 position = Vector2(456, 112)
@@ -120,17 +182,27 @@ script = ExtResource("2_dh8m6")
 jumpVelocity = 750.0
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="player"]
-position = Vector2(-157, 52.763)
+position = Vector2(-208, 144)
 scale = Vector2(1.40625, 2.32895)
 sprite_frames = SubResource("SpriteFrames_aqqyp")
-animation = &"crouch"
-frame = 1
-frame_progress = 0.30196
+animation = &"wall_slide"
+frame = 2
+frame_progress = 0.536647
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(-168, 64)
+position = Vector2(-200, 152)
 scale = Vector2(1.1875, 1.58585)
 shape = SubResource("CapsuleShape2D_p4epu")
+
+[node name="rightWall" type="RayCast2D" parent="player"]
+position = Vector2(-200, 144)
+scale = Vector2(1.40625, 2.32895)
+target_position = Vector2(11.3778, 0)
+
+[node name="leftWall" type="RayCast2D" parent="player"]
+position = Vector2(-200, 144)
+scale = Vector2(1.40625, 2.32895)
+target_position = Vector2(-11.3778, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -142,6 +214,27 @@ texture = ExtResource("1_rmc4k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(92, 512)
 shape = SubResource("RectangleShape2D_33m36")
+
+[node name="6" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1136, 296)
+scale = Vector2(7.9375, 1)
+texture = ExtResource("1_rmc4k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1136, 296)
+shape = SubResource("RectangleShape2D_33m36")
+
+[node name="7" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-464, 392)
+rotation = 1.5708
+scale = Vector2(9.2884, 0.821781)
+texture = ExtResource("1_rmc4k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-468, 392)
+rotation = 1.5708
+scale = Vector2(9.2884, 0.821781)
+shape = SubResource("RectangleShape2D_48ote")
 
 [node name="Label1" type="Label" parent="."]
 offset_left = 168.0

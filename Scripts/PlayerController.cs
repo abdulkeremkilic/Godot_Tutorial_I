@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class PlayerController : CharacterBody2D
@@ -6,9 +7,6 @@ public partial class PlayerController : CharacterBody2D
     [Export] public float jumpVelocity { get; set; } = 500f; //Y axis in Godot is in negative direction. It's downward.
     private double jumpTimer = 0;
     private AnimatedSprite2D sprite;
-    /// <summary>
-    /// Get gravity from project settings to keep everything in synced.
-    /// </summary>
     public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
 
@@ -24,34 +22,45 @@ public partial class PlayerController : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         Vector2 velocity = Velocity;
-        velocity.X = 0; //to stop character moving constanly even if you don't press any button in X axis.
+        velocity.X = 0; 
+        //to stop character moving constanly even if you don't press any button in X axis. 
+        // Make this by timer so player can take advantage of acceleration. 
 
         playIdleAnimation();
         velocity = this.applyGravity(delta, velocity);
         velocity = this.move(velocity);
 
+
+
         Velocity = velocity;
         this.MoveAndSlide();
-
     }
 
     private Vector2 move(Vector2 velocity)
     {
-        //This code below makes the character go back to the floor instantly. Can be used for some combos.
 
+        #region (crouch)
         if (Input.IsKeyPressed(Key.Down) && !IsOnFloor())
-        //This way it count even if you're holding the key. So this is not the proper way.
         //TODO: Make this code to read the key for once.
         {
-            velocity.Y = jumpVelocity * 5;
-            sprite.Play("crouch");
-        } 
-        else if (Input.IsKeyPressed(Key.Down) && IsOnFloor()) 
+            velocity.Y = jumpVelocity * 2;
+            sprite.Play("fall");
+        }
+        else if (Input.IsKeyPressed(Key.Down) && IsOnFloor())
         {
             sprite.Play("crouch");
         }
-        //TODO: if there is velocity; make character slide for a while.
+        #endregion
 
+        if(this.isNextToWall() && velocity.Y > 0)
+        {
+            sprite.FlipH = true;
+            sprite.Play("wall_slide");
+        }
+       
+
+
+        #region (jump)
         if (Input.IsKeyPressed(Key.Up) && IsOnFloor())
         {
             velocity.Y = -jumpVelocity;
@@ -66,30 +75,27 @@ public partial class PlayerController : CharacterBody2D
             velocity.Y = -jumpVelocity;
             jumpTimer = 0.0;
         }
+        #endregion
 
+
+        #region (move_right)
         if (Input.IsKeyPressed(Key.Right))
         {
             velocity.X = moveSpeed;
             sprite.FlipH = false;
             sprite.Play("walking");
-        }
-        else if (velocity.X == 0)
-        {
-            this.playIdleAnimation();
-        }
+        } 
+        #endregion
 
+
+        #region (move_left) 
         if (Input.IsKeyPressed(Key.Left))
         {
             velocity.X = -moveSpeed;
             sprite.FlipH = true;
             sprite.Play("walking");
-
         }
-        else if (velocity.X == 0)
-
-        {
-            this.playIdleAnimation();
-        }
+        #endregion
 
         return velocity;
     }
@@ -97,20 +103,38 @@ public partial class PlayerController : CharacterBody2D
     private Vector2 applyGravity(double delta, Vector2 velocity)
     {
         //apply gravity only if in the air
-        if (!this.IsOnFloor())
+        if (!this.IsOnFloor()) 
+        {
             velocity.Y += gravity * (float)delta;
+            sprite.Play("fall");
+        }
         return velocity;
     }
 
     private void playIdleAnimation()
     {
-        if (!Input.IsAnythingPressed() && this.IsOnFloor())
+        if (!Input.IsAnythingPressed() && this.IsOnFloor() && Velocity.X == 0)
         {
             sprite.Play("idle");
         }
     }
 
 
+    private Boolean isNextToWall() 
+    {
+        return this.isNextToLeftWall() || this.isNextToRightWall();
+    }
 
+    private Boolean isNextToRightWall()
+    {
+        RayCast2D nextToRightWall = GetNode<RayCast2D>("rightWall");
+        return nextToRightWall.IsColliding();
+    }
+
+    private Boolean isNextToLeftWall()
+    {
+        RayCast2D nextToLeftWall = GetNode<RayCast2D>("leftWall");
+        return nextToLeftWall.IsColliding();
+    }
 }
 
